@@ -67,6 +67,13 @@
   ></script>
   {{- end -}}
 
+  <!-- typewriter js -->
+  {{- if (not site.Params.disableHLJS) -}}
+  <script
+    src="https://unpkg.com/typewriter-effect@latest/dist/core.js"
+  ></script>
+  {{- end -}}
+
   <!-- math -->
   {{- if or .Params.math site.Params.math -}}
   <!---->

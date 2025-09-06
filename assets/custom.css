@@ -1,2 +1,6 @@
 /* Place custom css here. */
 @reference './app.css';
+
+.site-title {
+  min-width: 150px;
+}

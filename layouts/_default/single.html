@@ -19,6 +19,10 @@
     {{- end -}}
   </header>
 
+  {{- if .Params.cover -}}
+  <section><img src="{{ .Params.cover }}"></section>
+  {{- end -}}
+
   <section>{{- .Content -}}</section>
 
   <!-- Post Tags -->
