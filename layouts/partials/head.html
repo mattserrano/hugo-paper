@@ -35,8 +35,8 @@
   <!---->
   {{- $custom := resources.Get "custom.css" -}}
   <!---->
-  {{- $css := slice $main $custom | resources.Concat "main.css" | minify -}}
-  <link rel="preload stylesheet" as="style" href="{{- $css.Permalink -}}" />
+  {{- $css := slice $main $custom | resources.Concat "main.css" | minify | fingerprint -}}
+  <link rel="preload stylesheet" as="style" href="{{- $css.Permalink -}}" integrity="{{ $css.Data.Integrity }}" />
 
   <!-- dark icon -->
   {{- $dark_icon := "theme.png" -}}
@@ -64,7 +64,7 @@
   <script
     defer
     src="{{- `highlight.min.js` | absURL -}}"
-    onload="hljs.initHighlightingOnLoad();"
+    onload="hljs.initHighlightingOnLoad()"
   ></script>
   {{- end -}}
 
